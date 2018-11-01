@@ -1,0 +1,38 @@
+Shel:
+  Blog:
+    cldrFormat: null
+    localeFormatLength: 'long'
+    showAuthor: false
+    atomImageMaxWidth: 1200
+
+Neos:
+  Neos:
+    Ui:
+      resources:
+        javascript:
+          'mkuhlmann.ImpfDich:UiCkEditor':
+            resource: 'resource://mkuhlmann.ImpfDich/Public/Backend/CkEditorStyling.js'
+    fusion:
+      autoInclude:
+        Neos.NodeTypes.ColumnLayouts: true
+  ContentRepository:
+    contentDimensions:
+    
+     # Content dimension "language" serves for translation of content into different languages. Its value specifies
+     # the language or language variant by means of a locale.
+     'language':
+       # The default dimension that is applied when creating nodes without specifying a dimension
+       default: 'de'
+       # The default preset to use if no URI segment was given when resolving languages in the router
+       defaultPreset: 'de'
+       label: 'Language'
+       icon: 'icon-language'
+       presets:    
+         'en':
+           label: 'English'
+           values: ['en']
+           uriSegment: 'en'
+         'de':
+           label: 'German'
+           values: ['de']
+           uriSegment: 'de'

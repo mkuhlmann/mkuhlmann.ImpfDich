@@ -1,0 +1,45 @@
+
+'Neos.NodeTypes.BaseMixins:ImageMixin':
+  abstract: true
+  superTypes:
+    'mkuhlmann.ImpfDich:ImageSizeMixin': true
+    
+'Neos.NodeTypes:TextMixin':
+  abstract: true
+  properties:
+    text:
+      type: string
+      defaultValue: ""
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Inhalt ...'
+            autoparagraph: true
+            formatting:
+              strong: true
+              em: true
+              u: true
+              sub: true
+              sup: true
+              del: true
+              p: true
+              h1: true
+              h2: true
+              h3: true
+              h4: true
+              h5: true
+              h6: true
+              pre: true
+              underline: true
+              strikethrough: true
+              removeFormat: true
+              left: true
+              right: true
+              center: true
+              justify: true
+              table: true
+              ol: true
+              ul: true
+              a: true
+              'mkuhlmann.ImpfDich:CkBlockquote': true

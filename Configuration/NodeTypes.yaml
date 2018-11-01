@@ -1,0 +1,96 @@
+'mkuhlmann.ImpfDich:HomePage':
+  superTypes:
+    'mkuhlmann.ImpfDich:Page': true
+  ui:
+    label: Homepage
+  childNodes:
+    footer:
+      type: 'Neos.Neos:ContentCollection'
+'Neos.NodeTypes:Page':
+  abstract: true
+'mkuhlmann.ImpfDich:Page':
+  superTypes:
+    'Neos.NodeTypes:Page': true
+  ui:
+    icon: icon-file
+    label: Seite
+  properties:
+    hasMegaMenu:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: 'Mega Menü'
+        reloadPageIfChanged: true
+        inspector:
+          group: 'visibility'
+          position: 50
+          
+'mkuhlmann.ImpfDich:ImageSizeMixin':
+  abstract: true
+  properties:
+    scaleWidth:
+      type: integer
+      defaultValue: ''
+      ui:
+        label: 'Breite (px)'
+        reloadIfChanged: true
+        inspector:
+          group: 'image'
+          position: 401
+    scaleHeight:
+      type: integer
+      defaultValue: ''
+      ui:
+        label: 'Höhe (px)'
+        reloadIfChanged: true
+        inspector:
+          group: 'image'
+          position: 402
+
+'mkuhlmann.ImpfDich:Divider':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    group: general
+    label: 'Trenner'
+    icon: 'icon-divide'
+
+'mkuhlmann.ImpfDich:Column':
+  superTypes:
+    'Neos.Neos:Content': true
+  childNodes:
+    content:
+      type: 'Neos.Neos:ContentCollection'
+  ui:
+    group: structure
+    label: MColumn
+    icon: icon-columns
+    inlineEditable: true
+    inspector:
+      groups:
+        column:
+          label: i18n
+          position: 10
+          icon: icon-columns
+         
+'mkuhlmann.ImpfDich:Columns':
+  superTypes:
+    'Neos.Neos:Content': true
+  childNodes:
+    columns:
+      type: 'Neos.Neos:ContentCollection'
+      contraints:
+        nodeTypes:
+          '*': false
+          'mkuhlmann.ImpfDich:Column': true
+  ui:
+    group: structure
+    label: MColumns
+    icon: icon-columns
+    inlineEditable: true
+    inspector:
+      groups:
+        column:
+          label: i18n
+          position: 10
+          icon: icon-columns

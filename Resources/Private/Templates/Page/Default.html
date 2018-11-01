@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
+<html>
+<head>
+	<f:section name="metadata">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">		
+
+		<meta name="msapplication-config" content="{f:uri.resource(path: 'Assets/favicon/browserconfig.xml', package: 'mkuhlmann.ImpfDich')}">
+		<meta name="theme-color" content="#5b9cd4">
+	</f:section>
+
+	<f:section name="stylesheets">
+		<link rel="apple-touch-icon" sizes="144x144" href="{f:uri.resource(path: 'Assets/favicon/apple-touch-icon.png', package: 'mkuhlmann.ImpfDich')}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{f:uri.resource(path: 'Assets/favicon/favicon-32x32.png', package: 'mkuhlmann.ImpfDich')}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{f:uri.resource(path: 'Assets/favicon/favicon-16x16.png', package: 'mkuhlmann.ImpfDich')}">
+		<link rel="manifest" href="{f:uri.resource(path: 'Assets/favicon/manifest.json', package: 'mkuhlmann.ImpfDich')}">
+		<link rel="mask-icon" href="{f:uri.resource(path: 'Assets/favicon/safari-pinned-tab.svg', package: 'mkuhlmann.ImpfDich')}" color="#5bbad5">
+		<link rel="shortcut icon" href="{f:uri.resource(path: 'Assets/favicon/favicon.ico', package: 'mkuhlmann.ImpfDich')}">
+
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Assets/app.css', package: 'mkuhlmann.ImpfDich')}">
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway:300,400,600">
+		
+		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+		<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+	</f:section>
+
+	<f:section name="headScripts">
+		
+	</f:section>
+
+	<title>{title}</title>
+</head>
+<body>
+<f:section name="body">
+	<div class="container page-wrap">
+		<header>
+			<nav class="navbar has-shadow">
+				<div class="navbar-brand">
+					<neos:link.node class="navbar-item" node="~/">
+						<img src="{f:uri.resource(path: 'Assets/images/logo-text.svg', package: 'mkuhlmann.ImpfDich')}">
+					</neos:link.node>
+					<div class="navbar-burger burger" data-target="navbarItems">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<div id="navbarItems" class="navbar-menu">
+					<div class="navbar-start">
+						{parts.mainMenu -> f:format.raw()}
+					</div>
+				</div>
+
+				<div class="navbar-end is-hidden-touch">
+					<div class="navbar-item">
+						<a class="button is-link" href="<neos:uri.node node='~/node-svj4xlxnosl5m/node-zhawe0kqkuqvl'/>">
+							<span class="icon"><i class="mdi mdi-heart"></i></span><span>Unterstützen</span>
+						</a>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<header class="main-header">				
+				{parts.breadcrumb -> f:format.raw()}
+				<neos:contentElement.wrap node="{node}">
+					<h1 class="title is-3">{neos:contentElement.editable(property: 'title')}</h1>
+				</neos:contentElement.wrap>
+			</header>
+			<article>
+				{content.main -> f:format.raw()}
+				<div class="is-clearfix"></div>
+			</article>
+		</main>
+
+		<footer class="footer-page">
+			<div class="footer-cols">
+				{footer -> f:format.raw()}
+			</div>
+			<div class="footer-copy content is-clearfix has-text-grey">
+				<span class="is-pulled-left">&copy; 2018 Impfaufklärung in Deutschland e.V.</span>
+				<span class="is-pulled-right">
+					{parts.metaMenu -> f:format.raw()}
+				</span>
+			</div>
+		</footer>
+	</div>
+</f:section>
+<f:section name="bodyScripts">
+	<!-- Put your scripts inclusions for the end of the body here, they will be included in your website by Fusion -->
+</f:section>
+</body>
+</html>

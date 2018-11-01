@@ -1,0 +1,22 @@
+{
+    "description": "",
+    "type": "neos-site",
+    "require": {
+        "neos/neos": "*",
+        "neos/nodetypes": "*"
+    },
+    "suggest": {
+        "neos/seo": "*"
+    },
+    "name": "mkuhlmann/impfdich",
+    "autoload": {
+        "psr-4": {
+            "mkuhlmann\\ImpfDich\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "mkuhlmann.ImpfDich"
+        }
+    }
+}

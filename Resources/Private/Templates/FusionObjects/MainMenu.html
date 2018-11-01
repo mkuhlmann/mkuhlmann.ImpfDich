@@ -1,0 +1,56 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+<f:render section="itemList" arguments="{items: items, site: site}" />
+
+<f:section name="itemList">
+	<f:for each="{items}" as="item">
+		
+		<f:if condition="{item.subItems -> f:count()} == 0 || {item.node.nodeType} == 'Shel.Blog:BlogFeed'">
+			<f:then>
+				<neos:link.node class="navbar-item {item.state}" node="{item.node}">{item.label}</neos:link.node>
+			</f:then>
+			<f:else>
+				
+				<div class="navbar-item has-dropdown is-hoverable {item.state}">
+					<neos:link.node class="navbar-link" node="{item.node}">{item.label}</neos:link.node>
+					
+					<f:if condition="{item.node.properties.hasMegaMenu}">
+						<f:then>
+							<f:render section="megaMenu" arguments="{items: item.subItems}" />
+						</f:then>
+						<f:else>
+							<f:render section="subList" arguments="{items: item.subItems}" />
+						</f:else>
+					</f:if>
+
+					
+				</div>
+			</f:else>
+		</f:if>
+
+	</f:for>
+</f:section>
+
+<f:section name="megaMenu">
+	<div class="navbar-dropdown is-mega">
+			<div class="columns">
+				<f:for each="{items}" as="item">
+					<div class="column">
+						<h1 class="title is-size-5" style="padding: 0.375rem 1rem; margin-bottom: 0;">
+							{item.label}
+						</h1>
+						<f:for each="{item.subItems}" as="subItem">
+							<neos:link.node class="navbar-item {subItem.state}" node="{subItem.node}">{subItem.label}</neos:link.node>
+						</f:for>
+					</div>
+				</f:for>
+			</div>
+	</div>
+</f:section>
+
+<f:section name="subList">
+	<div class="navbar-dropdown">
+		<f:for each="{items}" as="item">
+			<neos:link.node class="navbar-item {item.state}" node="{item.node}">{item.label}</neos:link.node>
+		</f:for>
+	</div>
+</f:section>
