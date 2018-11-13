@@ -1,0 +1,97 @@
+
+body, html {
+	background-color: $body-background;
+	background: url('white_texture.png') repeat;
+}
+
+a {
+	transition:.2s;
+}
+
+body.rtl {
+	.main-header {
+		direction: rtl;
+	}
+}
+
+.text-rtl {
+	direction: rtl;
+}
+
+
+h1, h2, h3, h4, .title {
+	font-family: Raleway, sans-serif;
+	font-weight: 300;
+}
+
+.page-wrap {
+	background: $body-background;
+}
+
+
+
+// add blue stripes
+nav.navbar, .footer-page {
+	border-top: 8px solid $accent-color;
+}
+
+
+
+//
+// Bulma Changes
+//
+.card-content > .table {
+	margin-left: -1.5rem;
+	margin-right: -1.5rem;
+
+	&:first-child {		
+		margin-top: -1.3rem;
+	}
+}
+
+.table {
+	background-color: transparent;
+}
+.table.is-borderless {
+	.table td, .table th { border: none; }
+}
+
+.card-header {
+	background-color: $body-background;
+}
+
+///
+/// Font Styles
+///
+
+.is-size-1, .title.is-1 {
+  font-size: 3rem !important;
+}
+
+.is-size-2, .title.is-2 {
+  font-size: 2.5rem !important;
+}
+
+.is-size-3, .title.is-3 {
+  font-size: 2rem !important;
+}
+
+.is-size-4, .title.is-4 {
+  font-size: 1.5rem !important;
+}
+
+.is-size-5, .title.is-5 {
+  font-size: 1.25rem !important;
+}
+
+.is-size-6, .title.is-6 {
+  font-size: 1rem !important;
+}
+
+.is-size-7, .title.is-7 {
+  font-size: 0.75rem !important;
+}
+
+.is-italic {
+	font-style: italic;
+}

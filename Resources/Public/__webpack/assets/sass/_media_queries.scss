@@ -2,6 +2,12 @@
 	nav.navbar {
 		padding: 1em 2em;
 	}
+	
+	#navbarItems .navbar-dropdown.is-mega {
+		margin-left: -10em;
+		border-left: none;
+		border-top: 2px solid $accent-color;
+	}
 
 	.page-wrap {
 		margin-top: 2em; 

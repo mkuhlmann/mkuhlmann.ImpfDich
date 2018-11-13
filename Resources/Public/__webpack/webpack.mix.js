@@ -9,7 +9,7 @@ mix.setPublicPath(dir);
 
 
 mix.js('assets/js/app.js', dir)
-	.js('assets/js/vue-quiz.js', dir)
+	.js('assets/js/vue-components.js', dir)
 	.sass('assets/sass/app.scss', dir)
 	.copyDirectory('assets/images', dir+'/images')
 	.copyDirectory('assets/favicon', dir+'/favicon')

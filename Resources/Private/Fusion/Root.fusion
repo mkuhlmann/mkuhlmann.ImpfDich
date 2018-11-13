@@ -98,6 +98,10 @@ prototype(Neos.NodeTypes:Divider) < prototype(Neos.Neos:Content) {
     templatePath = 'resource://mkuhlmann.ImpfDich/Private/Templates/NodeTypes/Divider.html'
 }
 
+prototype(mkuhlmann.ImpfDich:AssetDownload) < prototype(Neos.Neos:Content) {
+    templatePath = 'resource://mkuhlmann.ImpfDich/Private/Templates/NodeTypes/AssetDownload.html'
+}
+
 prototype(Neos.NodeTypes:Headline) {
     attributes.class = 'content'
 }
@@ -111,6 +115,16 @@ prototype(Neos.NodeTypes:MultiColumnItem) {
 	attributes.class = ${'column is-' + String.split(q(node).parent().property('layout'), '-')[multiColumnIteration.index]}
 }
 
+prototype(Shel.Blog:BlogFeedContent) {
+	templatePath = ${request.format == 'html' ? 'resource://mkuhlmann.ImpfDich/Private/Templates/FusionObjects/BlogFeed.html' : 'resource://Shel.Blog/Private/Templates/Content/BlogFeed.' + request.format}
+	
+	@cache.entryTags {
+		1 = ${Neos.Caching.nodeTag(node)}
+		2 = ${Neos.Caching.nodeTag(sourceNode)}
+		3 = ${Neos.Caching.descendantOfTag(sourceNode)}
+	}
+}
+
 prototype(Shel.Blog:BlogEntryContent) {
 	templatePath = 'resource://mkuhlmann.ImpfDich/Private/Templates/FusionObjects/BlogEntry.html'
 	imageSettings = Neos.Fusion:RawArray {
@@ -120,4 +134,19 @@ prototype(Shel.Blog:BlogEntryContent) {
         cropping = false
         upScaling = false
     }
+	
+	summary = ${this.entrySummary != '' && this.entrySummary != null ? this.entrySummary  : (this.firstTextNode ? q(this.firstTextNode).property('text') : '')}	
+	summary.@process {
+        stripTags = ${String.stripTags(value)}
+        crop = ${String.crop(value, 600, '…')}
+    }
+}
+
+prototype(Shel.Blog:BlogFeedEntry) {
+	templatePath = 'resource://mkuhlmann.ImpfDich/Private/Templates/FusionObjects/BlogFeedEntry.html'
+}
+
+prototype(Shel.Blog:LatestBlogEntries) < prototype(Shel.Blog:BlogFeedContent) {
+	templatePath = 'resource://mkuhlmann.ImpfDich/Private/Templates/FusionObjects/BlogFeedLatest.html'
+	attributes.class = 'blog-latest content'
 }

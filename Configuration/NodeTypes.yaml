@@ -6,6 +6,7 @@
   childNodes:
     footer:
       type: 'Neos.Neos:ContentCollection'
+
 'Neos.NodeTypes:Page':
   abstract: true
 'mkuhlmann.ImpfDich:Page':
@@ -54,8 +55,46 @@
     group: general
     label: 'Trenner'
     icon: 'icon-divide'
+    
+'mkuhlmann.ImpfDich:AssetDownload':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: AssetDownload
+    icon: 'icon-files-o'
+    position: 700
+    inspector:
+      groups:
+        resources:
+          label: Asset
+          position: 5
+          icon: 'icon-files-o'
+  properties:
+    asset:
+      type: Neos\Media\Domain\Model\Asset
+      ui:
+        inspector:
+          group: 'resources'
+        label: Asset
+        reloadIfChanged: true
+    title:
+      type: string
+      ui:
+        inlineEditable: true
+        label: Titel
+        aloha:
+          placeholder: Titel
+    subtitle:
+      type: string
+      ui:
+        inlineEditable: true
+        label: Untertitel
+        aloha:
+          placeholder: Untertitel
+
 
 'mkuhlmann.ImpfDich:Column':
+  abstract: true
   superTypes:
     'Neos.Neos:Content': true
   childNodes:
@@ -74,6 +113,7 @@
           icon: icon-columns
          
 'mkuhlmann.ImpfDich:Columns':
+  abstract: true
   superTypes:
     'Neos.Neos:Content': true
   childNodes:

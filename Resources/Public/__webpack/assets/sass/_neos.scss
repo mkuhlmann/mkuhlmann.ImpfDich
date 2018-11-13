@@ -1,0 +1,18 @@
+
+.neos-alignment-center {
+	text-align: center;
+}
+
+.neos-alignment-right {
+	float: right !important;
+}
+
+.neos-alignment-left {
+	float: left !important;
+}
+
+.neos-nodetypes-textwithimage::after {
+	clear: both;
+	content: " ";
+	display: table;
+}
