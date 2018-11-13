@@ -21213,6 +21213,15 @@ nav.navbar,
   min-width: 250px;
 }
 
+.language-menu {
+  float: right;
+}
+
+.language-menu li {
+  display: inline;
+  font-size: 0.8em;
+}
+
 .blog-feed__entry {
   margin-bottom: 2em;
 }

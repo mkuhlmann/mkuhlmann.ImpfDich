@@ -49,6 +49,14 @@ $navbar-brand-height: 3.8rem;
 	}
 }
 
+.language-menu {
+	float: right;
+	li {
+		display: inline;
+		font-size: 0.8em;
+	}
+}
+
 .blog-feed__entry {
 	margin-bottom: 2em;
 }

@@ -37,6 +37,11 @@ prototype(mkuhlmann.ImpfDich:Page) < prototype(Neos.Neos:Page) {
                 maximumLevels = 1
                 startingPoint = ${q(site).children('[uriPathSegment="meta"]').get(0)}                
             }
+			
+			languageMenu = Neos.Neos:DimensionsMenu {
+				dimension = 'language'
+				attributes.class = 'language-menu'
+			}
             
             breadcrumb = Neos.Neos:BreadcrumbMenu {
                 templatePath = 'resource://mkuhlmann.ImpfDich/Private/Templates/FusionObjects/BreadcrumbMenu.html'

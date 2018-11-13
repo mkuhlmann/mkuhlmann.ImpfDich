@@ -64,7 +64,8 @@
 		</header>
 
 		<main>
-			<header class="main-header">				
+			<header class="main-header">
+				{parts.languageMenu -> f:format.raw()}
 				{parts.breadcrumb -> f:format.raw()}
 				<neos:contentElement.wrap node="{node}">
 					<h1 class="title is-3">{neos:contentElement.editable(property: 'title')}</h1>

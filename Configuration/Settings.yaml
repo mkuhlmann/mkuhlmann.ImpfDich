@@ -27,12 +27,13 @@ Neos:
        defaultPreset: 'de'
        label: 'Language'
        icon: 'icon-language'
-       presets:    
+       presets:
+         'de':
+           label: 'Deutsch'
+           values: ['de']
+           uriSegment: 'de'
+         
          'en':
            label: 'English'
            values: ['en']
            uriSegment: 'en'
-         'de':
-           label: 'German'
-           values: ['de']
-           uriSegment: 'de'
