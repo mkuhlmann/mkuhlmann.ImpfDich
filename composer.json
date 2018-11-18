@@ -1,14 +1,15 @@
 {
-    "description": "",
+    "name": "mkuhlmann/impfdich",    
+    "description": "Neos SitePackage for impf-dich.org",
     "type": "neos-site",
     "require": {
         "neos/neos": "*",
-        "neos/nodetypes": "*"
+        "neos/nodetypes": "*",
+        "shel/blog": "^4.0"
     },
     "suggest": {
         "neos/seo": "*"
     },
-    "name": "mkuhlmann/impfdich",
     "autoload": {
         "psr-4": {
             "mkuhlmann\\ImpfDich\\": "Classes/"
