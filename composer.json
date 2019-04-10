@@ -5,7 +5,8 @@
     "require": {
         "neos/neos": "*",
         "neos/nodetypes": "*",
-        "shel/blog": "^4.0"
+        "shel/blog": "^4.0",
+        "dl/gallery": "^3.1"
     },
     "suggest": {
         "neos/seo": "*"

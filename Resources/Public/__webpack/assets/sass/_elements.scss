@@ -80,6 +80,7 @@ $navbar-brand-height: 3.8rem;
 //
 main {
 	background-color: #fff;
+	
 	.main-header {
 		background-color: $body-background;
 		padding: 1rem 2rem;
@@ -87,6 +88,10 @@ main {
 
 		h1 {
 			padding: 0em 0;
+		}
+		
+		.breadcrumb {
+			margin-bottom: 1em;
 		}
 
 		.breadcrumb li.is-active a {

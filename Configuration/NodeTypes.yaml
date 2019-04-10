@@ -9,6 +9,7 @@
 
 'Neos.NodeTypes:Page':
   abstract: true
+
 'mkuhlmann.ImpfDich:Page':
   superTypes:
     'Neos.NodeTypes:Page': true

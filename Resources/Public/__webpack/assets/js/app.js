@@ -20,6 +20,7 @@ const app = new Vue({
 	el: '#app'
 });*/
 
+window.$ = window.jQuery = require('jquery');
 
 window.addEventListener('load', function(){
 	window.cookieconsent.initialise({
@@ -41,7 +42,6 @@ window.addEventListener('load', function(){
 			"href": "/datenschutz#cookies"
 		}
 	});
-
 });
 
 
