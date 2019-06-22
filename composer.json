@@ -5,7 +5,9 @@
     "require": {
         "neos/neos": "*",
         "neos/nodetypes": "*",
-        "shel/blog": "^4.0",
+        "neos/fusion-afx": "*",
+        "flowpack/neos-frontendlogin": "~3.0",
+        "shel/blog": "^5.0",
         "dl/gallery": "^3.1"
     },
     "suggest": {

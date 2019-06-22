@@ -1,0 +1,50 @@
+prototype(Shel.Blog:Component.Teaser) {
+	renderer >
+	
+	renderer = afx`
+		<article class="blog-feed__entry">
+			<header>
+				<time class="is-size-7 is-italic blog-date">{props.publicationDate}</time>
+				
+				<h1 class="title is-3" style="margin-bottom: 0.5em;">
+					
+					<Neos.Neos:NodeLink node={props.node} @if.inBackend={!props.documentNode.context.inBackend} />
+				</h1>
+			</header>
+			
+		</article>
+	`
+}
+
+prototype(Shel.Blog:Content.LatestArticles) {
+	renderer >
+	
+	renderer = afx`
+		<div class="blog-latest">
+			<Neos.Fusion:Loop items={props.feedEntries}>
+				<li><Neos.Neos:NodeLink node={item} /></li>
+			</Neos.Fusion:Loop>
+		</div>
+	`
+	
+}
+
+prototype(Shel.Blog:Component.Article) {
+	renderer >
+	
+	renderer = afx`
+		<header @if.hasImage={props.entryImage}>
+			<figure class="blog-entry-image blog-header">
+				<Neos.Fusion:Tag tagName="img" @children="attributes.src" attributes.alt={props.alternativeText} attributes.title={props.title} attributes.width={props.thumbnail.width} attributes.height={props.thumbnail.height}>
+					<Neos.Fusion:ResourceUri resource={props.thumbnail.resource}/>
+				</Neos.Fusion:Tag>
+			</figure>
+
+			<div class="blog-subheader">
+				<time class="is-size-7 is-italic blog-date">{props.publicationDate}</time>
+			</div>
+		</header>
+
+	<Neos.Neos:ContentCollection nodePath="main" />
+	`
+}

@@ -4,7 +4,7 @@
 <f:section name="itemList">
 	<f:for each="{items}" as="item">
 		
-		<f:if condition="{item.subItems -> f:count()} == 0 || {item.node.nodeType} == 'Shel.Blog:BlogFeed'">
+		<f:if condition="{item.subItems -> f:count()} == 0 || {item.node.nodeType} == 'Shel.Blog:Document.Feed'">
 			<f:then>
 				<neos:link.node class="navbar-item {item.state}" node="{item.node}">{item.label}</neos:link.node>
 			</f:then>
