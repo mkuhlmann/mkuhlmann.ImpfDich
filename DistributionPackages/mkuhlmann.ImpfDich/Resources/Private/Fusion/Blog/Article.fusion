@@ -1,4 +1,5 @@
 
+prototype(Shel.Blog:Document.GenericBlogPage) < prototype(mkuhlmann.ImpfDich:Page)
 
 prototype(Shel.Blog:Content.LatestArticles) {
 	renderer >

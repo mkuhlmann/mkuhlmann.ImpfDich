@@ -1,0 +1,39 @@
+prototype(Neos.NodeTypes:Menu) {
+	templatePath = 'resource://mkuhlmann.ImpfDich/Private/Templates/NodeTypes/NeosMenu.html'
+}
+
+
+
+prototype(Neos.NodeTypes:Image) {
+	width = ${q(node).property('scaleWidth') && q(node).property('scaleWidth') != 0 ? q(node).property('scaleWidth') : null}
+	height = ${q(node).property('scaleHeight') && q(node).property('scaleHeight') != 0 ? q(node).property('scaleHeight') : null}
+}
+
+prototype(Neos.NodeTypes:Text) {
+    attributes.class = 'content'
+}
+
+prototype(Neos.NodeTypes:TextWithImage) {
+    attributes.class = 'content'
+}
+
+prototype(Neos.NodeTypes:Divider) < prototype(Neos.Neos:Content) {
+    templatePath = 'resource://mkuhlmann.ImpfDich/Private/Templates/NodeTypes/Divider.html'
+}
+
+prototype(mkuhlmann.ImpfDich:AssetDownload) < prototype(Neos.Neos:Content) {
+    templatePath = 'resource://mkuhlmann.ImpfDich/Private/Templates/NodeTypes/AssetDownload.html'
+}
+
+prototype(Neos.NodeTypes:Headline) {
+    attributes.class = 'content'
+}
+
+prototype(Neos.NodeTypes:MultiColumn) {
+	attributes.class = 'columns'
+	columns.iterationName = 'multiColumnIteration'
+}
+
+prototype(Neos.NodeTypes:MultiColumnItem) {
+	attributes.class = ${'column is-' + String.split(q(node).parent().property('layout'), '-')[multiColumnIteration.index]}
+}
