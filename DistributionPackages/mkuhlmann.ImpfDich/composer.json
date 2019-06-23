@@ -1,0 +1,26 @@
+{
+    "name": "mkuhlmann/impfdich",    
+    "description": "Neos SitePackage for impf-dich.org",
+    "type": "neos-site",
+    "require": {
+        "neos/neos": "*",
+        "neos/nodetypes": "*",
+        "neos/fusion-afx": "*",
+        "flowpack/neos-frontendlogin": "~3.0",
+        "shel/blog": "^5.0",
+        "dl/gallery": "^3.1"
+    },
+    "suggest": {
+        "neos/seo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "mkuhlmann\\ImpfDich\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "mkuhlmann.ImpfDich"
+        }
+    }
+}
