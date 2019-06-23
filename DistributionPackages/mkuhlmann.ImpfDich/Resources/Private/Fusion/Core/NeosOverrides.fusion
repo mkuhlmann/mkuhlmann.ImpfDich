@@ -5,8 +5,9 @@ prototype(Neos.NodeTypes:Menu) {
 
 
 prototype(Neos.NodeTypes:Image) {
-	width = ${q(node).property('scaleWidth') && q(node).property('scaleWidth') != 0 ? q(node).property('scaleWidth') : null}
-	height = ${q(node).property('scaleHeight') && q(node).property('scaleHeight') != 0 ? q(node).property('scaleHeight') : null}
+	maximumWidth = ${q(node).property('scaleWidth') && q(node).property('scaleWidth') != 0 ? q(node).property('scaleWidth') : null}
+	maximumHeight = ${q(node).property('scaleHeight') && q(node).property('scaleHeight') != 0 ? q(node).property('scaleHeight') : null}
+	
 }
 
 prototype(Neos.NodeTypes:Text) {
