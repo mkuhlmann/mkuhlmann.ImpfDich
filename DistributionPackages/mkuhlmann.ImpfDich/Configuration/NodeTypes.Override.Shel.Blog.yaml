@@ -1,0 +1,6 @@
+'Shel.Blog:Document.Article':
+  childNodes:
+    main:
+      constraints:
+        nodeTypes:
+          '*': true
