@@ -13,7 +13,8 @@
       ui:
         inlineEditable: true
         inline:
-          editorOptions:
+          editorOptions:          
+            editor: 'ckeditor5'
             placeholder: 'Inhalt ...'
             autoparagraph: true
             formatting:
@@ -43,3 +44,15 @@
               ul: true
               a: true
               'mkuhlmann.ImpfDich:CkBlockquote': true
+
+'Neos.NodeTypes:Menu':
+  properties:
+    title:
+      type: string
+      ui:
+        label: 'Menu Title'
+        reloadIfChanged: true
+        inspector:
+          group: 'options'
+          position: -10
+        

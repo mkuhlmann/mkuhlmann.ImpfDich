@@ -4,7 +4,8 @@
 <f:if condition="{items -> f:count()}">
 	<f:then>
 		<aside class="menu">
-			<ul class="menu-list">
+			<p class="menu-label">{node.properties.title}</p>
+			<ul class="menu-list" style="border-left: 1px solid #dbdbdb;">
 				<f:render section="itemsList" arguments="{items: items}" />				
 			</ul>
 		</aside>
