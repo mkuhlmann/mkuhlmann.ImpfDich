@@ -8,7 +8,8 @@
         "neos/fusion-afx": "*",
         "flowpack/neos-frontendlogin": "~3.0",
         "shel/blog": "^5.0",
-        "dl/gallery": "^3.1"
+        "dl/gallery": "^3.1",
+        "jonnitto/photoswipe": "^3.0.1"
     },
     "suggest": {
         "neos/seo": "*"
