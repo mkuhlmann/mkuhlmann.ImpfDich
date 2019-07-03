@@ -60,14 +60,13 @@ prototype(Shel.Blog:Component.Feed) {
     }
 }
 
-prototype(mkuhlmann.ImpfDich:Blog.FeedEntry) < prototype(Shel.Blog:Component.Article) {
+
+prototype(mkuhlmann.ImpfDich:Blog.FeedEntry) < prototype(mkuhlmann.ImpfDich:Blog.ArticleBase) {
 	thumbnailWidth = 800
     thumbnailHeight = 600
 	thumbnailAllowCropping = false
 	
 	summary.@process.crop = ${String.crop(value, 600, '…')}
-	
-	renderer >
 	
 	renderer = afx`
 		<article class="blog-feed__entry">
@@ -84,7 +83,7 @@ prototype(mkuhlmann.ImpfDich:Blog.FeedEntry) < prototype(Shel.Blog:Component.Art
 					</a>
 				</h1>
 				
-				<div @if.hasImage={props.entryImage}>
+				<div @key="image" @if.hasImage={props.entryImage}>
 					<figure>
 						<Neos.Fusion:Tag tagName="img" @children="attributes.src"
 							attributes.alt={props.alternativeText} attributes.title={props.title}

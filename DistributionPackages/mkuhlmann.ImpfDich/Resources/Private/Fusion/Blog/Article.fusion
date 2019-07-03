@@ -33,3 +33,50 @@ prototype(Shel.Blog:Component.Article) {
 	<Neos.Neos:ContentCollection nodePath="main" />
 	`
 }
+
+
+
+prototype(mkuhlmann.ImpfDich:Blog.ArticleBase) < prototype(Neos.Neos:ContentComponent)  {
+	// https://raw.githubusercontent.com/Sebobo/Shel.Blog/master/Resources/Private/Fusion/Components/Article.fusion
+	settings = ${Configuration.setting('Shel.Blog')}
+    cldrFormat = ${this.settings.cldrFormat}
+    localeFormatLength = ${this.settings.localeFormatLength}
+    showAuthor = ${this.settings.showAuthor}
+
+    documentNode = ${documentNode}
+    node = ${node}
+    identifier = ${node.identifier}
+
+    title = ${q(node).property('title')}
+    entrySummary = ${q(node).property('entrySummary')}
+    categories = ${q(node).property('categories') || []}
+    authorName = ${q(node).property('authorName')}
+    alternativeText = ${q(node).property('alternativeText')}
+    entryImage = ${q(node).property('entryImage')}
+
+    rawPublicationDate = ${q(node).property('publicationDate')}
+    publicationDate = ${this.rawPublicationDate}
+    publicationDate.@process.fallback = ${value != '' && value != null ? value : q(node).property('_lastPublicationDateTime')}
+    publicationDate.@process.format = ${Shel.Blog.Format.date(value, 'Y-m-d', 'date', this.localeFormatLength, this.cldrFormat)}
+
+    firstTextNode = ${q(node).children('main').find('[instanceof Neos.Neos:Content][text]').get(0)}
+
+    summary = ${this.entrySummary != '' && this.entrySummary != null ? this.entrySummary  : (this.firstTextNode ? q(this.firstTextNode).property('text') : '')}
+    summary.@process.stripTags = ${String.stripTags(value)}
+    summary.@process.stripTags.@if.live = ${!documentNode.context.inBackend}
+    summary.@process.crop = ${String.crop(value, 200, '…')}
+    summary.@process.crop.@if.live = ${!documentNode.context.inBackend}
+
+    articleUri = Neos.Neos:NodeUri {
+        node = ${node}
+        absolute = true
+        format = 'html'
+    }
+
+    thumbnailWidth = 1280
+    thumbnailHeight = 500
+    thumbnailAllowCropping = false
+    thumbnailAllowUpScaling = false
+    thumbnail = ${Shel.Blog.Asset.createThumbnail(this.entryImage, this.thumbnailWidth, null, this.thumbnailHeight, null, this.thumbnailAllowCropping, this.thumbnailAllowUpScaling)}
+    thumbnail.@if.hasAsset = ${this.entryImage}
+}
