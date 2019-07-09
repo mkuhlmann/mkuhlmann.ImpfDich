@@ -57,8 +57,16 @@ $navbar-brand-height: 3.8rem;
 	}
 }
 
+.blog-article__categories span {
+	margin-right: 3px;
+}
+
 .blog-feed__entry {
 	margin-bottom: 2em;
+	
+	header h1 {
+		word-break: break-word;
+	}
 }
 
 .blog-header {

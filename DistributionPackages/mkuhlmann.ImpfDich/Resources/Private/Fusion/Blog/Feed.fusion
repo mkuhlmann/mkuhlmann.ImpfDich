@@ -92,13 +92,12 @@ prototype(mkuhlmann.ImpfDich:Blog.FeedEntry) < prototype(mkuhlmann.ImpfDich:Blog
 						</Neos.Fusion:Tag>
 					</figure>
 				</div>
-				
-				<p @key="content">
-					<Neos.Neos:Editable property="entrySummary" block={false} @if.inBackend={props.node.context.inBackend}/>
-					{props.node.context.inBackend ? '' : props.summary}
-				</p>
 			</header>
-			
+						
+			<p @key="content">
+				<Neos.Neos:Editable property="entrySummary" block={false} @if.inBackend={props.node.context.inBackend}/>
+				{props.node.context.inBackend ? '' : props.summary}
+			</p>
 			
 		</article>
 		<hr/>
