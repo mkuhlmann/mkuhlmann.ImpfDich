@@ -16,16 +16,16 @@
         "bin-dir": "bin"
     },
     "require": {
-        "neos/neos": "~4.3.0",
-        "neos/nodetypes": "~4.3.0",
-        "neos/site-kickstarter": "~4.3.0",
+        "neos/neos": "~5.1",
+        "neos/nodetypes": "~5.1",
+        "neos/site-kickstarter": "~5.1",
 
-        "neos/neos-ui": "~3.3",
+        "neos/neos-ui": "~5.1",
         "neos/seo": "~3.0",
-        "neos/fusion-afx": "~1.2",
-        "neos/redirecthandler-neosadapter": "~3.0",
-        "neos/redirecthandler-databasestorage": "~3.0",
-        
+        "neos/fusion-afx": "~1.4",
+        "neos/redirecthandler-neosadapter": "~4.0",
+        "neos/redirecthandler-databasestorage": "~4.0",
+
         "neos/setup": "@dev",
         "mkuhlmann/impfdich": "@dev"
     },
@@ -53,5 +53,7 @@
         "post-install-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
         "post-package-update": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
         "post-package-install": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
-    }
+    },
+	"minimum-stability": "dev",
+    "prefer-stable": true
 }

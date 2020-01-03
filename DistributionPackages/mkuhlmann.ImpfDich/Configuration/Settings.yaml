@@ -12,12 +12,10 @@ Neos:
         javascript:
           'mkuhlmann.ImpfDich:UiCkEditor':
             resource: 'resource://mkuhlmann.ImpfDich/Public/Backend/CkEditorStyling.js'
-    fusion:
-      autoInclude:
-        Neos.NodeTypes.ColumnLayouts: true
+
   ContentRepository:
     contentDimensions:
-    
+
      # Content dimension "language" serves for translation of content into different languages. Its value specifies
      # the language or language variant by means of a locale.
      'language':
@@ -32,7 +30,7 @@ Neos:
            label: 'Deutsch'
            values: ['de']
            uriSegment: 'de'
-         
+
          'en':
            label: 'English'
            values: ['en']
@@ -44,4 +42,3 @@ Neos:
         'Neos.Neos':
           variables:
             'defaultUriSuffix': ''
-          

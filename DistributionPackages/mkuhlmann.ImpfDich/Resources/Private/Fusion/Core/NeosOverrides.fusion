@@ -7,7 +7,7 @@ prototype(Neos.NodeTypes:Menu) {
 prototype(Neos.NodeTypes:Image) {
 	maximumWidth = ${q(node).property('scaleWidth') && q(node).property('scaleWidth') != 0 ? q(node).property('scaleWidth') : null}
 	maximumHeight = ${q(node).property('scaleHeight') && q(node).property('scaleHeight') != 0 ? q(node).property('scaleHeight') : null}
-	
+
 }
 
 prototype(Neos.NodeTypes:Text) {
@@ -16,6 +16,12 @@ prototype(Neos.NodeTypes:Text) {
 
 prototype(Neos.NodeTypes:TextWithImage) {
     attributes.class = 'content'
+}
+
+prototype(mkuhlmann.ImpfDich:Divider) < prototype(Neos.Fusion:Component) {
+	renderer = afx`
+	<hr/>
+	`
 }
 
 prototype(Neos.NodeTypes:Divider) < prototype(Neos.Neos:Content) {
@@ -30,11 +36,14 @@ prototype(Neos.NodeTypes:Headline) {
     attributes.class = 'content'
 }
 
-prototype(Neos.NodeTypes:MultiColumn) {
+/*
+Neos.NodeTypes.ColumnLayouts
+*/
+prototype(Neos.NodeTypes.ColumnLayouts:MultiColumn) {
 	attributes.class = 'columns'
 	columns.iterationName = 'multiColumnIteration'
 }
 
-prototype(Neos.NodeTypes:MultiColumnItem) {
+prototype(Neos.NodeTypes.ColumnLayouts:MultiColumnItem) {
 	attributes.class = ${'column is-' + String.split(q(node).parent().property('layout'), '-')[multiColumnIteration.index]}
 }
