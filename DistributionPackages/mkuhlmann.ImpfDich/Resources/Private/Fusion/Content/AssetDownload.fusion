@@ -1,0 +1,7 @@
+prototype(mkuhlmann.ImpfDich:AssetDownload) < prototype(Neos.Neos:Content) {
+	title = ${q(node).property('title')}
+	subtitle = ${q(node).property('subtitle')}
+	asset = ${q(node).property('asset')}
+	
+	templatePath = 'resource://mkuhlmann.ImpfDich/Private/Templates/NodeTypes/AssetDownload.html'
+}

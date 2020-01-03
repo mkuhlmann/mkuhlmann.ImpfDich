@@ -8,10 +8,10 @@
 		<a class="download-box" href="{f:uri.resource(resource: asset.resource)}">
 	</f:else>
 </f:if>
-        <neos.media:thumbnail asset="{asset}" alt="thumb" />
-        <f:if condition="{asset.fileExtension} == 'pdf'">
+		
+		<f:if condition="{asset.fileExtension} == 'pdf'">
 			<div class="download-icon"><i class="mdi mdi-file-pdf" aria-hidden="true"></i></div>
-        </f:if>
+		</f:if>
 	
 		<div class="download-text">
 			<neos:contentElement.editable property="title" tag="strong" /><br>

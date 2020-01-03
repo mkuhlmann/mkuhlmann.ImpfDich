@@ -28,9 +28,7 @@ prototype(Neos.NodeTypes:Divider) < prototype(Neos.Neos:Content) {
     templatePath = 'resource://mkuhlmann.ImpfDich/Private/Templates/NodeTypes/Divider.html'
 }
 
-prototype(mkuhlmann.ImpfDich:AssetDownload) < prototype(Neos.Neos:Content) {
-    templatePath = 'resource://mkuhlmann.ImpfDich/Private/Templates/NodeTypes/AssetDownload.html'
-}
+
 
 prototype(Neos.NodeTypes:Headline) {
     attributes.class = 'content'
