@@ -120,6 +120,48 @@ window.impf.vueRegisterQuiz = function (el) {
   });
 };
 
+window.impf.vueRegisterFaqNeos = function (htmlId) {
+  var faq = [];
+  var questionsEl = document.querySelectorAll("#faq_".concat(htmlId, " .card"));
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = questionsEl[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var quetionEl = _step.value;
+      var q = {
+        q: quetionEl.children[0].children[0].innerHTML,
+        a: quetionEl.children[1].innerHTML
+      };
+      faq.push(q);
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+        _iterator["return"]();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  window.__faq = faq;
+  document.querySelector("#faq_".concat(htmlId)).remove();
+  new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+    el: document.querySelector("#faq_vue_".concat(htmlId)),
+    template: '<Faq />',
+    components: {
+      Faq: _vue_Faq_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    }
+  });
+};
+
 window.impf.vueRegisterFaq = function (htmlEl, el) {
   var faq = [];
   var html = document.querySelector(htmlEl);

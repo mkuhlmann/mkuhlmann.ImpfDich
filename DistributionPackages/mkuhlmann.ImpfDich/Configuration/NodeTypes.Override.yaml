@@ -13,7 +13,7 @@
       ui:
         inlineEditable: true
         inline:
-          editorOptions:          
+          editorOptions:
             editor: 'ckeditor5'
             placeholder: 'Inhalt ...'
             autoparagraph: true

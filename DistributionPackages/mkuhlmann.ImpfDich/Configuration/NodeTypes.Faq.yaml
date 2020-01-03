@@ -1,0 +1,41 @@
+
+'mkuhlmann.ImpfDich:Faq':
+  superTypes:
+    'Neos.Neos:Content': true
+  childNodes:
+    items:
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': false
+          'mkuhlmann.ImpfDich:FaqItem': true
+  ui:
+    group: general
+    label: Faq
+    icon: icon-question-circle
+    inlineEditable: true
+
+'mkuhlmann.ImpfDich:FaqItem':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Neos.NodeTypes:TextMixin': true
+  label: ${q(node).property('definition')}
+  properties:
+    definition:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Definition'
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: '...?'
+        reloadIfChanged: true
+        placeholder: '...?'
+    # text: via 'Neos.NodeTypes:TextMixin'
+  ui:
+    group: general
+    label: FaqItem
+    icon: icon-question
+    inlineEditable: true
+         

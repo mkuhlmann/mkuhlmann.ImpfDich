@@ -1,26 +1,8 @@
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-
-//window.Vue = require('vue');
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-//Vue.component('example-component', require('./components/ExampleComponent.vue'));
-/*
-const app = new Vue({
-	el: '#app'
-});*/
-
-window.$ = window.jQuery = require('jquery');
+//window.$ = window.jQuery = require('jquery');
+window.impf = {
+	vueLoaded: false
+};
 
 window.addEventListener('load', function(){
 	window.cookieconsent.initialise({
@@ -81,3 +63,36 @@ document.addEventListener('DOMContentLoaded', function () {
 		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'trck.js'; s.parentNode.insertBefore(g,s);
 	})();
 });
+
+function loadScript(u, c) {
+	var d = document, t = 'script',
+		o = d.createElement(t),
+		s = d.getElementsByTagName(t)[0];
+	o.src = u;
+	if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+	s.parentNode.insertBefore(o, s);
+}
+
+
+
+
+impf.ensureVueLoaded = function(c) {
+	if(!impf.vueLoaded) {
+		console.log('loading vuejs components ...');
+		loadScript('/_Resources/Static/Packages/mkuhlmann.ImpfDich/Assets/vue-components.js', function() {
+			impf.vueLoaded = true;
+			console.log('loaded vuejs components.');
+			c();
+
+		});
+	} else {
+		c();
+	}
+};
+
+impf.neosFaq = function(id) {
+	if(window.neos) return; // we in backend bois
+	impf.ensureVueLoaded(function() {
+		impf.vueRegisterFaqNeos(id);
+	});
+};

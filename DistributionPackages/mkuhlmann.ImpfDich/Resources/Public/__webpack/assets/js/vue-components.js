@@ -15,6 +15,29 @@ window.impf.vueRegisterQuiz = el => {
 	});
 }
 
+window.impf.vueRegisterFaqNeos = (htmlId) => {
+
+	let faq = [];
+	let questionsEl = document.querySelectorAll(`#faq_${htmlId} .card`);
+	for(let quetionEl of questionsEl) {
+		let q = {
+			q: quetionEl.children[0].children[0].innerHTML,
+			a: quetionEl.children[1].innerHTML
+		};
+		faq.push(q);
+	}
+
+	window.__faq = faq;
+
+	document.querySelector(`#faq_${htmlId}`).remove();
+	
+	new Vue({
+		el: document.querySelector(`#faq_vue_${htmlId}`),
+		template: '<Faq />',
+		components: { Faq }
+	});
+};
+
 window.impf.vueRegisterFaq = (htmlEl, el) => {
 	var faq = [];
 	var html = document.querySelector(htmlEl);

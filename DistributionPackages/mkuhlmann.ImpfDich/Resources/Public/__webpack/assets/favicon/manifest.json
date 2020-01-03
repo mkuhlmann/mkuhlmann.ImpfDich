@@ -1,8 +1,8 @@
 {
-    "name": "Impf dich",
+    "name": "Impf Dich",
     "icons": [
         {
-            "src": "/favicon/android-chrome-144x144.png",
+            "src": "/_Resources/Static/Packages/mkuhlmann.ImpfDich/Assets/favicon/android-chrome-144x144.png",
             "sizes": "144x144",
             "type": "image/png"
         }

@@ -1,0 +1,34 @@
+prototype(mkuhlmann.ImpfDich:Faq) < prototype(Neos.Neos:ContentComponent) {
+	#node = ${node}
+	#node.@process.debug = Neos.Fusion:Debug {}
+
+	nodeId = ${node.nodeData.identifier}
+
+	renderer = afx`
+		<div id={'faq_' + props.nodeId}>
+			<Neos.Neos:ContentCollection @key="items" nodePath="items" />
+		</div>
+		<div id={'faq_vue_' + props.nodeId}></div>
+		<script type="text/javascript">
+			impf.neosFaq('{props.nodeId}');
+		</script>
+	`
+
+}
+
+prototype(mkuhlmann.ImpfDich:FaqItem) < prototype(Neos.Neos:ContentComponent) {
+
+	renderer = afx`
+		<div class="card has-margin-bottom-md">
+			<div class="card-header">
+				<p class="card-header-title">
+					<Neos.Neos:Editable block={false} property="definition" />
+				</p>
+			</div>
+			<div class="card-content">
+				<Neos.Neos:Editable property="text" />
+			</div>
+		</div>
+	`
+
+}
