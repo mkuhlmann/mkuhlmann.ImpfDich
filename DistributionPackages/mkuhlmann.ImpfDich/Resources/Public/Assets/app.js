@@ -10805,8 +10805,8 @@ return jQuery;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/cabox/workspace/neos-impf/DistributionPackages/mkuhlmann.ImpfDich/Resources/Public/__webpack/assets/js/app.js */"./assets/js/app.js");
-module.exports = __webpack_require__(/*! /home/cabox/workspace/neos-impf/DistributionPackages/mkuhlmann.ImpfDich/Resources/Public/__webpack/assets/sass/app.scss */"./assets/sass/app.scss");
+__webpack_require__(/*! /home/mkuhlmann/workspace/mkuhlmann.ImpfDich/DistributionPackages/mkuhlmann.ImpfDich/Resources/Public/__webpack/assets/js/app.js */"./assets/js/app.js");
+module.exports = __webpack_require__(/*! /home/mkuhlmann/workspace/mkuhlmann.ImpfDich/DistributionPackages/mkuhlmann.ImpfDich/Resources/Public/__webpack/assets/sass/app.scss */"./assets/sass/app.scss");
 
 
 /***/ })
