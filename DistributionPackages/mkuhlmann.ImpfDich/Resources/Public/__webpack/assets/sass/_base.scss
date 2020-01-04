@@ -53,12 +53,17 @@ nav.navbar, .footer-page {
 .table {
 	background-color: transparent;
 }
+
 .table.is-borderless {
 	.table td, .table th { border: none; }
 }
 
 .card-header {
 	background-color: $body-background;
+}
+
+.table td > ul:first-child, .table td > ol:first-child {
+	margin-top: 0;
 }
 
 ///

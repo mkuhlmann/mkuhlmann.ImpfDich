@@ -21743,6 +21743,11 @@ nav.navbar,
   background-color: #f5f5f5;
 }
 
+.table td > ul:first-child,
+.table td > ol:first-child {
+  margin-top: 0;
+}
+
 .is-size-1,
 .title.is-1 {
   font-size: 3rem !important;
@@ -22279,6 +22284,10 @@ main .main-padding {
 
 .footer-copy span {
   font-size: 0.75em;
+}
+
+.blog-latest a {
+  word-break: break-word;
 }
 
 a.download-box {
