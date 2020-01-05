@@ -16,3 +16,13 @@
 	content: " ";
 	display: table;
 }
+
+figure {
+	margin: 0.5em;
+}
+
+figcaption {
+	font-style: italic;
+	color: $grey-dark;
+	font-size: 90%;
+}

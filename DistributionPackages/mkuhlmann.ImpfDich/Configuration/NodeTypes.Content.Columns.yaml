@@ -51,3 +51,46 @@
               '25-25-25-25': ~
               '3-3-3-3':
                 label: '25% / 25% / 25% / 25%'
+
+
+'mkuhlmann.ImpfDich:Column':
+  abstract: true
+  superTypes:
+    'Neos.Neos:Content': true
+  childNodes:
+    content:
+      type: 'Neos.Neos:ContentCollection'
+  ui:
+    group: structure
+    label: MColumn
+    icon: icon-columns
+    inlineEditable: true
+    inspector:
+      groups:
+        column:
+          label: i18n
+          position: 10
+          icon: icon-columns
+         
+'mkuhlmann.ImpfDich:Columns':
+  abstract: true
+  superTypes:
+    'Neos.Neos:Content': true
+  childNodes:
+    columns:
+      type: 'Neos.Neos:ContentCollection'
+      contraints:
+        nodeTypes:
+          '*': false
+          'mkuhlmann.ImpfDich:Column': true
+  ui:
+    group: structure
+    label: MColumns
+    icon: icon-columns
+    inlineEditable: true
+    inspector:
+      groups:
+        column:
+          label: i18n
+          position: 10
+          icon: icon-columns

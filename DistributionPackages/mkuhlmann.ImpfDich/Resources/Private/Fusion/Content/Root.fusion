@@ -1,0 +1,11 @@
+prototype(mkuhlmann.ImpfDich:Content.Blockquote) < prototype(Neos.Neos:ContentComponent) {
+
+	renderer = afx`
+		<div class="content">
+			<blockquote>
+				<Neos.Neos:Editable property="text" block={false} />
+			</blockquote>
+		</div>
+	`
+
+}

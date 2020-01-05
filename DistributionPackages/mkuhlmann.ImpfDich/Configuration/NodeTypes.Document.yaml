@@ -1,0 +1,29 @@
+'mkuhlmann.ImpfDich:HomePage':
+  superTypes:
+    'mkuhlmann.ImpfDich:Page': true
+  ui:
+    label: Homepage
+  childNodes:
+    footer:
+      type: 'Neos.Neos:ContentCollection'
+
+'Neos.NodeTypes:Page':
+  abstract: true
+
+'mkuhlmann.ImpfDich:Page':
+  superTypes:
+    'Neos.NodeTypes:Page': true
+  ui:
+    icon: icon-file
+    label: Seite
+  properties:
+    hasMegaMenu:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: 'Mega Menü'
+        reloadPageIfChanged: true
+        inspector:
+          group: 'visibility'
+          position: 50
+          

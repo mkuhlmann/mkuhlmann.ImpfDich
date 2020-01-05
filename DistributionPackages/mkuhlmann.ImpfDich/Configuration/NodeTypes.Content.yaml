@@ -1,32 +1,4 @@
-'mkuhlmann.ImpfDich:HomePage':
-  superTypes:
-    'mkuhlmann.ImpfDich:Page': true
-  ui:
-    label: Homepage
-  childNodes:
-    footer:
-      type: 'Neos.Neos:ContentCollection'
 
-'Neos.NodeTypes:Page':
-  abstract: true
-
-'mkuhlmann.ImpfDich:Page':
-  superTypes:
-    'Neos.NodeTypes:Page': true
-  ui:
-    icon: icon-file
-    label: Seite
-  properties:
-    hasMegaMenu:
-      type: boolean
-      defaultValue: false
-      ui:
-        label: 'Mega Menü'
-        reloadPageIfChanged: true
-        inspector:
-          group: 'visibility'
-          position: 50
-          
 'mkuhlmann.ImpfDich:ImageSizeMixin':
   abstract: true
   properties:
@@ -93,45 +65,11 @@
         aloha:
           placeholder: Untertitel
 
-
-'mkuhlmann.ImpfDich:Column':
-  abstract: true
+'mkuhlmann.ImpfDich:Content.Blockquote':
   superTypes:
     'Neos.Neos:Content': true
-  childNodes:
-    content:
-      type: 'Neos.Neos:ContentCollection'
+    'Neos.NodeTypes:TextMixin': true
   ui:
-    group: structure
-    label: MColumn
-    icon: icon-columns
-    inlineEditable: true
-    inspector:
-      groups:
-        column:
-          label: i18n
-          position: 10
-          icon: icon-columns
-         
-'mkuhlmann.ImpfDich:Columns':
-  abstract: true
-  superTypes:
-    'Neos.Neos:Content': true
-  childNodes:
-    columns:
-      type: 'Neos.Neos:ContentCollection'
-      contraints:
-        nodeTypes:
-          '*': false
-          'mkuhlmann.ImpfDich:Column': true
-  ui:
-    group: structure
-    label: MColumns
-    icon: icon-columns
-    inlineEditable: true
-    inspector:
-      groups:
-        column:
-          label: i18n
-          position: 10
-          icon: icon-columns
+    label: 'Zitat'
+    icon: icon-quote-right
+    group: 'general'

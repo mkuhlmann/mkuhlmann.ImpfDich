@@ -22332,6 +22332,16 @@ a.download-box .download-text {
   display: table;
 }
 
+figure {
+  margin: 0.5em;
+}
+
+figcaption {
+  font-style: italic;
+  color: #4a4a4a;
+  font-size: 90%;
+}
+
 @media screen and (min-width: 1024px) {
   nav.navbar {
     padding: 1em 2em;
