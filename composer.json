@@ -16,12 +16,12 @@
         "bin-dir": "bin"
     },
     "require": {
-        "neos/neos": "~5.1",
-        "neos/nodetypes": "~5.1",
-        "neos/site-kickstarter": "~5.1",
+        "neos/neos": "~5.2",
+        "neos/nodetypes": "~5.2",
+        "neos/site-kickstarter": "~5.2",
 
-        "neos/neos-ui": "~5.1",
-        "neos/seo": "~3.0",
+        "neos/neos-ui": "~5.2",
+        "neos/seo": "~3.1",
         "neos/fusion-afx": "~1.4",
         "neos/redirecthandler-neosadapter": "~4.0",
         "neos/redirecthandler-databasestorage": "~4.0",
