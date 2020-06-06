@@ -100,6 +100,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vue_Quiz_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./vue/Quiz.vue */ "./assets/js/vue/Quiz.vue");
 /* harmony import */ var _vue_Faq_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./vue/Faq.vue */ "./assets/js/vue/Faq.vue");
 /* harmony import */ var _vue_SlideUpDown_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./vue/SlideUpDown.vue */ "./assets/js/vue/SlideUpDown.vue");
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 
 
 
@@ -123,12 +129,12 @@ window.impf.vueRegisterQuiz = function (el) {
 window.impf.vueRegisterFaqNeos = function (htmlId) {
   var faq = [];
   var questionsEl = document.querySelectorAll("#faq_".concat(htmlId, " .card"));
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
+
+  var _iterator = _createForOfIteratorHelper(questionsEl),
+      _step;
 
   try {
-    for (var _iterator = questionsEl[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
       var quetionEl = _step.value;
       var q = {
         q: quetionEl.children[0].children[0].innerHTML,
@@ -137,18 +143,9 @@ window.impf.vueRegisterFaqNeos = function (htmlId) {
       faq.push(q);
     }
   } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
+    _iterator.e(err);
   } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-        _iterator["return"]();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
-    }
+    _iterator.f();
   }
 
   window.__faq = faq;
@@ -523,6 +520,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 //
 //
 //
@@ -643,12 +646,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     loadQuiz: function loadQuiz(quiz) {
       this.questions = [];
-      var _iteratorNormalCompletion = true;
-      var _didIteratorError = false;
-      var _iteratorError = undefined;
+
+      var _iterator = _createForOfIteratorHelper(quiz.questions),
+          _step;
 
       try {
-        for (var _iterator = quiz.questions[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
           var q = _step.value;
           q.isAnswered = false;
           q.isRight = false;
@@ -656,18 +659,9 @@ __webpack_require__.r(__webpack_exports__);
           this.questions.push(q);
         }
       } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
+        _iterator.e(err);
       } finally {
-        try {
-          if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-            _iterator["return"]();
-          }
-        } finally {
-          if (_didIteratorError) {
-            throw _iteratorError;
-          }
-        }
+        _iterator.f();
       }
 
       this.totalQuestions = this.questions.length;
@@ -759,7 +753,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".quiz[data-v-0d7310e6] {\n  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);\n}\n.quiz__answer__header[data-v-0d7310e6] {\n  border-bottom: 1px solid rgba(10, 10, 10, 0.1);\n  border-top: 1px solid rgba(10, 10, 10, 0.1);\n  padding: 1rem 0.5rem;\n  cursor: pointer;\n}\n.quiz__answer__abc[data-v-0d7310e6] {\n  float: left;\n  padding-left: 1em;\n  font-weight: bold;\n}\n.quiz__answer__text[data-v-0d7310e6] {\n  padding-left: 3em;\n}\n.quiz__answer--wrong .quiz__answer__header[data-v-0d7310e6] {\n  background-color: #FFCDD2;\n}\n.quiz__answer--right .quiz__answer__header[data-v-0d7310e6] {\n  background-color: #C8E6C9;\n}\n.quiz__answer__explanation[data-v-0d7310e6] {\n  padding: 1rem 3rem;\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-duration: 2s;\n          transition-duration: 2s;\n  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);\n          transition-timing-function: cubic-bezier(0, 1, 0.5, 1);\n}\n.quiz__navigation[data-v-0d7310e6] {\n  border-bottom: 1px solid rgba(10, 10, 10, 0.1);\n  border-top: 1px solid rgba(10, 10, 10, 0.1);\n}\n.quiz__navigation a[data-v-0d7310e6] {\n  border-right: 1px solid rgba(10, 10, 10, 0.1);\n  padding: 0.5em;\n  display: inline-block;\n}\n.quiz__score[data-v-0d7310e6] {\n  text-align: center;\n}\n.quiz__question[data-v-0d7310e6] {\n  border-bottom: 1px solid rgba(10, 10, 10, 0.1);\n  padding: 1.5rem 1rem;\n  font-weight: bold;\n}\n.quiz__question__subheader[data-v-0d7310e6] {\n  font-weight: lighter;\n  font-size: 80%;\n}\n.quiz__boxwrap[data-v-0d7310e6] {\n  max-width: 600px;\n  margin: 0 auto;\n}\n.progress[data-v-0d7310e6] {\n  -webkit-transform: rotate(-90deg);\n          transform: rotate(-90deg);\n}\n.progress__meter[data-v-0d7310e6],\n.progress__value[data-v-0d7310e6] {\n  fill: none;\n}\n.progress__meter[data-v-0d7310e6] {\n  stroke: #e6e6e6;\n}\n.progress__value[data-v-0d7310e6] {\n  stroke: #f77a52;\n  stroke-linecap: round;\n}", ""]);
+exports.push([module.i, ".quiz[data-v-0d7310e6] {\n  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);\n}\n.quiz__answer__header[data-v-0d7310e6] {\n  border-bottom: 1px solid rgba(10, 10, 10, 0.1);\n  border-top: 1px solid rgba(10, 10, 10, 0.1);\n  padding: 1rem 0.5rem;\n  cursor: pointer;\n}\n.quiz__answer__abc[data-v-0d7310e6] {\n  float: left;\n  padding-left: 1em;\n  font-weight: bold;\n}\n.quiz__answer__text[data-v-0d7310e6] {\n  padding-left: 3em;\n}\n.quiz__answer--wrong .quiz__answer__header[data-v-0d7310e6] {\n  background-color: #FFCDD2;\n}\n.quiz__answer--right .quiz__answer__header[data-v-0d7310e6] {\n  background-color: #C8E6C9;\n}\n.quiz__answer__explanation[data-v-0d7310e6] {\n  padding: 1rem 3rem;\n  transition-property: all;\n  transition-duration: 2s;\n  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);\n}\n.quiz__navigation[data-v-0d7310e6] {\n  border-bottom: 1px solid rgba(10, 10, 10, 0.1);\n  border-top: 1px solid rgba(10, 10, 10, 0.1);\n}\n.quiz__navigation a[data-v-0d7310e6] {\n  border-right: 1px solid rgba(10, 10, 10, 0.1);\n  padding: 0.5em;\n  display: inline-block;\n}\n.quiz__score[data-v-0d7310e6] {\n  text-align: center;\n}\n.quiz__question[data-v-0d7310e6] {\n  border-bottom: 1px solid rgba(10, 10, 10, 0.1);\n  padding: 1.5rem 1rem;\n  font-weight: bold;\n}\n.quiz__question__subheader[data-v-0d7310e6] {\n  font-weight: lighter;\n  font-size: 80%;\n}\n.quiz__boxwrap[data-v-0d7310e6] {\n  max-width: 600px;\n  margin: 0 auto;\n}\n.progress[data-v-0d7310e6] {\n  transform: rotate(-90deg);\n}\n.progress__meter[data-v-0d7310e6],\n.progress__value[data-v-0d7310e6] {\n  fill: none;\n}\n.progress__meter[data-v-0d7310e6] {\n  stroke: #e6e6e6;\n}\n.progress__value[data-v-0d7310e6] {\n  stroke: #f77a52;\n  stroke-linecap: round;\n}", ""]);
 
 // exports
 
@@ -778,7 +772,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.Container[data-v-19725426] {\n  overflow: hidden;\n\n  -webkit-transition-property: all;\n\n  transition-property: all;\n}\n", ""]);
+exports.push([module.i, "\n.Container[data-v-19725426] {\n  overflow: hidden;\n\n  transition-property: all;\n}\n", ""]);
 
 // exports
 
@@ -2480,7 +2474,12 @@ function normalizeComponent (
     options._ssrRegister = hook
   } else if (injectStyles) {
     hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      ? function () {
+        injectStyles.call(
+          this,
+          (options.functional ? this.parent : this).$root.$options.shadowRoot
+        )
+      }
       : injectStyles
   }
 
@@ -2489,7 +2488,7 @@ function normalizeComponent (
       // for template-only hot-reload because in that case the render fn doesn't
       // go through the normalizer
       options._injectStyles = hook
-      // register for functioal component in vue file
+      // register for functional component in vue file
       var originalRender = options.render
       options.render = function renderWithStyleInjection (h, context) {
         hook.call(context)

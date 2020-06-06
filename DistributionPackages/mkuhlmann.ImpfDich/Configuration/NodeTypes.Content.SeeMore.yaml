@@ -1,0 +1,23 @@
+'mkuhlmann.ImpfDich:Content.SeeMore':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Neos.NodeTypes.BaseMixins:TextMixin': true
+  # text: via 'Neos.NodeTypes:TextMixin'
+  label: ${q(node).property('label')}
+  properties:
+    label:
+      type: string
+      defaultValue: 'Mehr anzeigen'
+      ui:
+        label: 'Titel'
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Mehr anzeigen'
+        reloadIfChanged: true
+        placeholder: 'Mehr anzeigen'
+  ui:
+    group: general
+    label: SeeMore
+    icon: icon-caret-square-down
+    inlineEditable: true

@@ -1,0 +1,20 @@
+prototype(mkuhlmann.ImpfDich:Content.SeeMore) < prototype(Neos.Neos:ContentComponent) {
+	text = Neos.Neos:Editable {
+		property = 'text'
+	}
+
+	label = Neos.Neos:Editable {
+		property = 'label'
+		block = false
+	}
+
+	node = ${node}
+
+	renderer = afx`
+		<div class="content">
+			<a href={'#' + props.node.nodeData.identifier} onclick={node.context.inBackend ? 'return false' : ''} class="spoiler-link">{props.label}</a>
+			<div id={props.node.nodeData.identifier} class={node.context.inBackend ? 'blockquote' : 'spoiler-hidden'}>{props.text}</div>
+		</div>
+
+	`
+}

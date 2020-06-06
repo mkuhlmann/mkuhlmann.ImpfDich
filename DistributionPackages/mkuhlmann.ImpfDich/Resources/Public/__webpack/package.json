@@ -11,19 +11,19 @@
   },
   "dependencies": {
     "axios": "^0.19",
-    "bulma": "^0.8.0",
+    "bulma": "^0.8.2",
     "cookieconsent": "^3.1.1",
-    "cross-env": "^6.0",
-    "jquery": "^3.4.1",
-    "justifiedGallery": "^3.7.0",
-    "laravel-mix": "^5.0.1",
+    "cross-env": "^7.0",
+    "jquery": "^3.5.1",
+    "justifiedGallery": "^3.8.1",
+    "laravel-mix": "^5.0.4",
     "mdi": "^2.2.43",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },
   "devDependencies": {
     "resolve-url-loader": "3.1.1",
-    "sass": "^1.24.1",
+    "sass": "^1.26.8",
     "sass-loader": "8.*"
   }
 }
