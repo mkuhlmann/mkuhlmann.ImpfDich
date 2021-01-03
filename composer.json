@@ -16,15 +16,14 @@
         "bin-dir": "bin"
     },
     "require": {
-        "neos/neos": "~5.3",
-        "neos/nodetypes": "~5.3",
-        "neos/site-kickstarter": "~5.3",
+        "neos/neos": "~7.0",
+        "neos/nodetypes": "~7.0",
+        "neos/site-kickstarter": "~7.0",
 
-        "neos/neos-ui": "~5.3",
-        "neos/seo": "~3.1",
-        "neos/fusion-afx": "~1.4",
-        "neos/redirecthandler-neosadapter": "~4.1",
-        "neos/redirecthandler-databasestorage": "~4.1",
+        "neos/neos-ui": "~7.0",
+        "neos/seo": "~3.2",
+        "neos/redirecthandler-neosadapter": "~4.3",
+        "neos/redirecthandler-databasestorage": "~5.0",
 
         "neos/setup": "@dev",
         "mkuhlmann/impfdich": "@dev"

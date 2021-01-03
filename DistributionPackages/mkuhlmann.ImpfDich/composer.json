@@ -7,9 +7,8 @@
         "neos/nodetypes": "*",
         "neos/fusion-afx": "*",
         "shel/blog": "dev-master@dev",
-        "dl/gallery": "^4.1",
-        "jonnitto/photoswipe": "^3.0.1",
-        "neos/nodetypes-columnlayouts": "^5.1"
+        "dl/gallery": "dev-master",
+        "jonnitto/photoswipe": "^3.0.1"
     },
     "suggest": {
         "neos/seo": "*"
