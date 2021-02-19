@@ -3,7 +3,7 @@ prototype(Shel.Blog:Document.GenericBlogPage) < prototype(mkuhlmann.ImpfDich:Pag
 
 prototype(Shel.Blog:Content.LatestArticles) {
 	renderer >
-	
+
 	renderer = afx`
 		<div class="blog-latest">
 			<Neos.Fusion:Loop items={props.feedEntries}>
@@ -11,12 +11,12 @@ prototype(Shel.Blog:Content.LatestArticles) {
 			</Neos.Fusion:Loop>
 		</div>
 	`
-	
+
 }
 
 prototype(Shel.Blog:Component.Article) {
 	renderer >
-	
+
 	renderer = afx`
 		<header @if.hasImage={props.entryImage}>
 			<figure class="blog-entry-image blog-header">

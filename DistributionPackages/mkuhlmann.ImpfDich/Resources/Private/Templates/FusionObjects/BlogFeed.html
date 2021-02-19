@@ -5,7 +5,7 @@
 	  xmlns:fa="Neos\FluidAdaptor\ViewHelpers"
       xmlns:neoscr="Neos\ContentRepository\ViewHelpers">
 <f:section name="feed">
-	
+
     <div class="columns">
 		<div class="column is-two-thirds">
 			<f:if condition="{renderFeed}">
@@ -24,32 +24,32 @@
 				</f:else>
 			</f:if>
 		</div>
-		
+
 		<div class="column">
 			<div class="columns is-vcentered is-mobile">
 				<div class="column is-4">
 					<img src="{f:uri.resource(path: 'Assets/images/logo-square.svg', package: 'mkuhlmann.ImpfDich')}">
 				</div>
 				<div class="column">
-					<h2 class="is-size-3 has-text-weight-bold" style="color: #689DD3">Aktuelles</h2>	
-				
+					<h2 class="is-size-3 has-text-weight-bold" style="color: #689DD3">Aktuelles</h2>
+
 				</div>
 			</div>
-			
+
 			<p class="content">
 				Hier gibt es Neuigkeiten aus unserem Verein mit den einzelnen Lokalgruppen, Berichte über Errungenschaften und Schulbesuche sowie vielseitige Interviews mit Experten im Thema Impfen.
 			</p>
-		
-			<p class="content">	
-				<h2 class="is-size-3">Kategorien</h2>		
+
+			<p class="content">
+				<h2 class="is-size-3">Kategorien</h2>
 				<f:for each="{categoryList}" as="category">
 					<neos:link.node node="{category}" title="{category.label}">	{category.label} </neos:link.node>
 				</f:for>
 			</p>
-			
+
 		</div>
-		
+
 	</div>
-	
+
 </f:section>
 </html>

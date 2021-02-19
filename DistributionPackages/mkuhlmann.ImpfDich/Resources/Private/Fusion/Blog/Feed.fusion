@@ -1,88 +1,89 @@
 prototype(Shel.Blog:Component.Feed) {
 
 	categoryList = ${q(sourceNode).find('[instanceof Shel.Blog:Document.Category]').get()}
-	
+
 	renderer >
-	
+
 	renderer = Neos.Fusion:Template {
-        templatePath = ${request.format == 'html' ? 
-			'resource://mkuhlmann.ImpfDich/Private/Templates/FusionObjects/BlogFeed.html' : 
+		templatePath = ${request.format == 'html' ?
+			'resource://mkuhlmann.ImpfDich/Private/Templates/FusionObjects/BlogFeed.html' :
 			'resource://Shel.Blog/Private/Templates/Components/Feed.' + request.format
 		}
-		
-        attributes = Neos.Fusion:Attributes {
-            class = 'blog-feed'
-        }
-        sectionName = 'feed'
 
-        header = afx`
-            <header>
-                <h1 @key="headline"><Neos.Neos:Editable property="title"/></h1>
-                {props.summary}
-            </header>
-        `
+		attributes = Neos.Fusion:Attributes {
+			class = 'blog-feed'
+		}
+		sectionName = 'feed'
 
-        node = ${node}
-        authorName = ${props.authorName}
-        title = ${props.title}
-        description = ${props.description}
-        lastUpdated = ${props.lastUpdated}
-        feedEntries = ${props.feedEntries}
-        renderFeed = ${props.renderFeed}
-        paginationConfiguration = ${props.paginationConfiguration}
+		header = afx`
+			<header>
+				<h1 @key="headline"><Neos.Neos:Editable property="title"/></h1>
+				{props.summary}
+			</header>
+		`
+
+		node = ${node}
+		authorName = ${props.authorName}
+		title = ${props.title}
+		description = ${props.description}
+		lastUpdated = ${props.lastUpdated}
+		feedEntries = ${props.feedEntries}
+		renderFeed = ${props.renderFeed}
+		paginationConfiguration = ${props.paginationConfiguration}
 		categoryList = ${props.categoryList}
 
-        listAttributes = Neos.Fusion:Attributes {
-            class = 'blog-feed__articles'
-        }
+		listAttributes = Neos.Fusion:Attributes {
+			class = 'blog-feed__articles'
+		}
 
-        noEntriesFound = afx`
-            <p class="blog-feed__no-articles">
-                {I18n.translate('Shel.Blog:Main:blogEntry.noEntriesFound', 'No articles found')}
-            </p>
-        `
+		noEntriesFound = afx`
+			<p class="blog-feed__no-articles">
+				{I18n.translate('Shel.Blog:Main:blogEntry.noEntriesFound', 'No articles found')}
+			</p>
+		`
 
-        feedContent = Neos.Fusion:Collection {
-            collection = ${props.feedEntries}
-            itemName = 'node'
-            itemRenderer = Neos.Fusion:Case {
-                atom {
-                    condition = ${request.format == 'atom'}
-                    type = 'Shel.Blog:Component.AtomTeaser'
-                }
+		feedContent = Neos.Fusion:Collection {
+			collection = ${props.feedEntries}
+			itemName = 'node'
+			itemRenderer = Neos.Fusion:Case {
+				atom {
+					condition = ${request.format == 'atom'}
+					type = 'Shel.Blog:Component.AtomTeaser'
+				}
 
-                default {
-                    condition = true
-                    type = 'mkuhlmann.ImpfDich:Blog.FeedEntry'
-                }
-            }
-        }
-    }
+				default {
+					condition = true
+					type = 'mkuhlmann.ImpfDich:Blog.FeedEntry'
+				}
+			}
+		}
+	}
+
 }
 
 
 prototype(mkuhlmann.ImpfDich:Blog.FeedEntry) < prototype(mkuhlmann.ImpfDich:Blog.ArticleBase) {
 	thumbnailWidth = 800
-    thumbnailHeight = 600
+	thumbnailHeight = 600
 	thumbnailAllowCropping = false
-	
+
 	summary.@process.crop = ${String.crop(value, 600, '…')}
-	
+
 	renderer = afx`
 		<article class="blog-feed__entry">
 			<header @key="header">
 				<div class="is-size-7">
-					<time class="is-italic blog-date">{props.publicationDate}</time> 
+					<time class="is-italic blog-date">{props.publicationDate}</time>
 					&nbsp;&mdash;&nbsp;
 					<Shel.Blog:Component.CategoryList @key="categoryList" categories={props.categories} />
 				</div>
-				
+
 				<h1 class="title is-3" style="margin-bottom: 0.5em;">
 					<a href={props.documentNode.context.inBackend ? '#' : props.articleUri} title={props.title}>
 						{props.title}
 					</a>
 				</h1>
-				
+
 				<div @key="image" @if.hasImage={props.entryImage}>
 					<figure>
 						<Neos.Fusion:Tag tagName="img" @children="attributes.src"
@@ -93,14 +94,14 @@ prototype(mkuhlmann.ImpfDich:Blog.FeedEntry) < prototype(mkuhlmann.ImpfDich:Blog
 					</figure>
 				</div>
 			</header>
-						
+
 			<p @key="content">
 				<Neos.Neos:Editable property="entrySummary" block={false} @if.inBackend={props.node.context.inBackend}/>
 				{props.node.context.inBackend ? '' : props.summary}
 			</p>
-			
+
 		</article>
 		<hr/>
 	`
-	
+
 }
