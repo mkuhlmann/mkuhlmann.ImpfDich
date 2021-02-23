@@ -13,7 +13,7 @@ mix.js('assets/js/app.js', dir)
 	.sass('assets/sass/app.scss', dir)
 		.options({
 			//processCssUrls: false,
-			postCss: [ tailwindcss('./tailwind.config.js') ]
+			//postCss: [ tailwindcss('./tailwind.config.js') ]
 		})
 	.copyDirectory('assets/images', dir+'/images')
 	.copyDirectory('assets/favicon', dir+'/favicon')
